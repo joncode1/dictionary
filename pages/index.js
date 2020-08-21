@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/index.module.css'
 
 export default function Home() {
   return (
@@ -11,9 +11,12 @@ export default function Home() {
         <h1>Dictionary Search</h1>
         <p>Input your word to find the definition.</p>
 
-        <div className="topnav">
-            <input type="text" placeholder="Search.."/>
-        </div>
+        <form>
+            <label>
+                <input type="text" name="word" />
+            </label>
+            <input className={styles.inputcolor} type="submit" value="Submit" />
+        </form>
     </div>
   )
 }

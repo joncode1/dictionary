@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.inputcolor {
+  background-color: #8AB5F7;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
