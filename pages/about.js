@@ -2,8 +2,10 @@ import fetch from 'isomorphic-unfetch'
 import axios from 'axios'
 import Head from 'next/head'
 import styles from "../styles/index.module.css";
+import process from "../next.config"
 
 const api = axios.create({
+
     "method":"GET",
     "url":"https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf",
     "headers":{
@@ -13,7 +15,7 @@ const api = axios.create({
         "useQueryString":true
     }
 })
-
+console.log(process.env.test)
 const AboutPage = (myWord) =>(
 
     <div className={styles.container}>
@@ -23,7 +25,7 @@ const AboutPage = (myWord) =>(
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <h1>About Page4</h1>
+        <h1>About Page</h1>
         <p>Updated on: {myWord.thePassed.price}</p>
     </div>
 
@@ -33,9 +35,9 @@ AboutPage.getInitialProps = async function() {
 
     const myRES = await fetch('https://api.binance.us/api/v3/ticker/price?symbol=ETHUSD');
     const myDATA = await myRES.json();
+
     return {
         thePassed: myDATA,
-
     };
 }
 
